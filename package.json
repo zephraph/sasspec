@@ -1,0 +1,28 @@
+{
+  "name": "sasspec",
+  "version": "0.0.0",
+  "description": "A unit testing library for sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephraph/sasspec.git"
+  },
+  "keywords": [
+    "sass",
+    "unit",
+    "testing",
+    "test"
+  ],
+  "author": "Zephraph <zephraph@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zephraph/sasspec/issues"
+  },
+  "homepage": "https://github.com/zephraph/sasspec#readme",
+  "devDependencies": {
+    "shelljs": "^0.7.0"
+  }
+}
