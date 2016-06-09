@@ -1,9 +1,9 @@
 language: node_js
 node_js:
   - "5"
-  
+
 before_script:
-  - 'if [ "$SEQ_VERSION" ]; then npm install node-sass@$SEQ_VERSION; fi'
+  - 'if [ "$SASS_VERSION" ]; then npm install node-sass@$SASS_VERSION; fi'
 
 env:
   - SASS_VERSION=3.7.0
