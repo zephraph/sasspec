@@ -4,7 +4,7 @@
   "description": "A unit testing library for sass",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,16 @@
     "url": "https://github.com/zephraph/sasspec/issues"
   },
   "homepage": "https://github.com/zephraph/sasspec#readme",
+  "peerDependencies": {
+    "node-sass": "^3.0.0"
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
   "devDependencies": {
-    "shelljs": "^0.7.0"
+    "mocha": "^2.5.3",
+    "shelljs": "^0.7.0",
+    "ts-node": "^0.8.0",
+    "typescript": "^1.8.10"
   }
 }
