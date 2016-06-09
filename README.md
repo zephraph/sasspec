@@ -1,4 +1,4 @@
-# sasspec
+# sasspec [![Build Status](https://travis-ci.org/zephraph/sasspec.svg?branch=master)](https://travis-ci.org/zephraph/sasspec)
 
 A framework to test sass mixins and functions
 
