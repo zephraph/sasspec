@@ -39,8 +39,6 @@ export function renderSync(renderOpts: SassRenderOpts) {
       data
     });
 
-    console.log(opts);
-
     return normalizer(
       sass
         .renderSync(opts)

@@ -8,9 +8,9 @@ target.all = ->
   target.build()
 
 target.list = ->
-  console.log 'Available targets:'
+  echo 'Available targets:'
   for cmd of target
-    console.log '-', cmd
+    echo '-', cmd
 
 target.build = (args = '') ->
   exec "tsc #{args}"

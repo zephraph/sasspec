@@ -7,7 +7,6 @@ export default class Sasspec {
   filePath: string;
 
   constructor(filePath: string) {
-    console.log('filePath', filePath);
     this.filePath = filePath;
   }
 
