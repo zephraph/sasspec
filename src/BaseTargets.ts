@@ -1,15 +1,23 @@
 import { assert } from 'chai';
 
+import { SassOptions } from './renderer';
+
 export abstract class TestTarget {
 
   name: string;
   file: string;
   result: string;
+  options: SassOptions;
 
-  constructor(filePath: string, name: string) {
+  constructor(filePath: string, name: string, options?: SassOptions) {
     this.file = filePath;
     this.name = name;
     this.result = null;
+    this.options = options;
+  }
+
+  withOptions(options: SassOptions) {
+    this.options = options;
   }
 
   equals(given: string): void {

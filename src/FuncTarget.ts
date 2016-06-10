@@ -2,34 +2,36 @@ import { TestTarget } from './BaseTargets';
 import * as sass from 'node-sass';
 import * as path from 'path';
 
+import { renderSync, defaultNormalizer } from './renderer';
+
 export default class FuncTarget extends TestTarget {
 
-  private call(func: string = 'argFunc', args: string = null): string {
-    if (args) {
+  private call(args: string = null): string {
 
-    }
-    return sass.renderSync({
-      includePaths: [
-        path.dirname(this.file)
-      ],
-      data: `
-        @import '${path.basename(this.file, '.scss')}';
-        /* #{call('${this.name}'${args ? ", " + args: ""})} */
-      `
-    }).css.toString('utf8').trim().slice(2, -2).trim();
-  }
+    const data = `
+      @import '${path.basename(this.file, '.scss')}';
+      /* #{call('${this.name}'${args ? ", " + args: ""})} */`;
 
-  calledWithArgs(...args: string[]): FuncTarget {
-    let argString = args.join(',');
-    this.result = this.call(undefined, argString);
+    return renderSync({
+      file: this.file,
+      data,
+      normalizer: defaultNormalizer(2, -2)
+    });
 
-    // Use sass to call function
-    return this;
   }
 
   called(): FuncTarget {
     this.result = this.call();
+
     return this;
   }
+
+  calledWithArgs(...args: string[]): FuncTarget {
+    let argString = args.join(',');
+    this.result = this.call(argString);
+
+    return this;
+  }
+
 
 }

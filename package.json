@@ -4,7 +4,14 @@
   "description": "A unit testing library for sass",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register test/**/*.spec.ts"
+    "all": "coffee make.coffee all",
+    "list": "coffee make.coffee list",
+    "build": "coffee make.coffee build",
+    "build:watch": "coffee make.coffee build:watch",
+    "test": "coffee make.coffee test",
+    "test:watch": "coffee make.coffee test:watch",
+    "scripts:update": "coffee make.coffee scripts:update",
+    "clean": "coffee make.coffee clean"
   },
   "repository": {
     "type": "git",
@@ -26,12 +33,15 @@
     "node-sass": "^3.0.0"
   },
   "dependencies": {
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
+    "coffee-script": "^1.10.0",
     "mocha": "^2.5.3",
     "shelljs": "^0.7.0",
     "ts-node": "^0.8.0",
+    "tslint": "^3.11.0",
     "typescript": "^1.8.10"
   }
 }

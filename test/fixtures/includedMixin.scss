@@ -1,0 +1,16 @@
+@mixin singleProp() {
+  background: white;
+}
+
+@mixin doubleProp() {
+  background: white;
+  color: red;
+}
+
+@mixin styles($map) {
+  @each $property, $value in $map {
+    @if(type-of($value) != map) {
+      #{$property}: $value;
+    }
+ }
+}
