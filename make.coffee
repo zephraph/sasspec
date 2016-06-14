@@ -5,12 +5,16 @@ config = require './tsconfig.json'
 { outDir } = config.compilerOptions
 
 target.all = ->
+  target.clean()
   target.build()
 
 target.list = ->
   echo 'Available targets:'
   for cmd of target
     echo '-', cmd
+
+target.prepublish = ->
+  target.all()
 
 target.build = (args = '') ->
   exec "tsc #{args}"

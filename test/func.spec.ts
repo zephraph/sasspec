@@ -1,4 +1,4 @@
-import Sasspec from '../src';
+import Sasspec from '../lib';
 import { expect } from 'chai';
 import { resolve } from 'path';
 
