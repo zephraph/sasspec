@@ -1,6 +1,4 @@
-import FuncTarget from './FuncTarget';
-import StandAloneMixinTarget from './StandAloneMixinTarget';
-import IncludedMixinTarget from './IncludedMixinTarget';
+import { FuncTarget, MixinTarget } from './targets';
 
 export default class Sasspec {
 
@@ -14,12 +12,8 @@ export default class Sasspec {
     return new FuncTarget(this.filePath, name);
   }
 
-  standAloneMixin(name): StandAloneMixinTarget {
-    return new StandAloneMixinTarget(this.filePath, name);
-  }
-
-  includedMixin(name): IncludedMixinTarget {
-    return new IncludedMixinTarget(this.filePath, name);
+  mixin(name): MixinTarget {
+    return new MixinTarget(this.filePath, name);
   }
 
 }

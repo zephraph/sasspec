@@ -2,7 +2,6 @@ import * as sass from 'node-sass';
 import * as path from 'path';
 
 import { merge } from 'lodash';
-import { TestTarget } from './BaseTargets';
 
 export interface SassOptions {
   outputStyle?: string

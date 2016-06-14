@@ -14,3 +14,21 @@
     }
  }
 }
+
+@mixin block() {
+  @content;
+}
+
+@mixin blockWithArgs($args...) {
+  args: $args;
+  @content;
+}
+
+@mixin calls($style) {
+  @content;
+  @include styles($style);
+}
+
+@mixin doesNotCall() {
+  no: call;
+}

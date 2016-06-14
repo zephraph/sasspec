@@ -23,6 +23,14 @@ describe('func', () => {
       sass.func('withArgs').calledWithArgs('test', 'this').equals('test, this');
     });
 
+    it('should return true given a true value', () => {
+      sass.func('withArgs').calledWithArgs(true).isTrue();
+    });
+
+    it('should return false given a false value', () => {
+      sass.func('withArgs').calledWithArgs(false).isFalse();
+    });
+
   });
 
 });

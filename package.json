@@ -1,6 +1,6 @@
 {
   "name": "sasspec",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A unit testing library for sass",
   "main": "index.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "coffee-script": "^1.10.0",
     "mocha": "^2.5.3",
     "shelljs": "^0.7.0",
+    "sinon": "^1.17.4",
     "ts-node": "^0.8.0",
     "tslint": "^3.11.0",
     "typescript": "^1.8.10"
