@@ -15,14 +15,8 @@ target.list = ->
 target.build = (args = '') ->
   exec "tsc #{args}"
 
-target['build:watch'] = ->
-  target.build '-w'
-
 target.test = (args = '') ->
   exec "mocha #{args} --require ts-node/register test/**/*.spec.ts"
-
-target['test:watch'] = ->
-  exec target.test '-w'
 
 target['scripts:update'] = ->
   pkg.scripts = {}
