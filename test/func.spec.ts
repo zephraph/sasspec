@@ -23,6 +23,14 @@ describe('func', () => {
       sass.func('withArgs').calledWithArgs('test', 'this').equals('test, this');
     });
 
+    it('should return a list argument', () => {
+      sass.func('withArgs').calledWithArgs('(test, 1, 2)').equals('test, 1, 2');
+    });
+
+    it('should return multiple list argument', () => {
+      sass.func('withArgs').calledWithArgs('(test, 1, 2), (a, b, c)').equals('test, 1, 2, a, b, c');
+    });
+
     it('should return true given a true value', () => {
       sass.func('withArgs').calledWithArgs(true).isTrue();
     });
