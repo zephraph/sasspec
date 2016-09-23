@@ -15,7 +15,7 @@ test('function should be called with no args', assert => {
     .equal('noArgs');
 });
 
-test('function should be called with strin arg', assert => {
+test('function should be called with string arg', assert => {
   sass(assert)
     .func('withArgs')
     .calledWithArgs('test')

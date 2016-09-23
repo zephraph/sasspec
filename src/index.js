@@ -1,7 +1,7 @@
 /* @flow */
 
 import func from './func';
-// import mixin from './mixin';
+import mixin from './mixin';
 
 type Assert = {
   equals: Function,
@@ -11,14 +11,14 @@ type Assert = {
 
 type Sasspec = {
   func: Function,
-  // mixin: Function
+  mixin: Function
 };
 
 export default function sasspec(file: string, assert: ?Assert): Sasspec {
 
   return {
     func: func(file, assert),
-    // mixin: mixin(file, assert)
+    mixin: mixin(file, assert)
   };
 
 }

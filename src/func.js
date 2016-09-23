@@ -20,7 +20,7 @@ export default function func(file: string, assert: ?Assert): SassFuncWrap {
   });
 }
 
-const call = (name: string, file: string, args: ?string) => {
+const call = ({ name, file, args = '' }) => {
   const data = `
       @import '${path.basename(file, '.scss')}'
       /* #{call('${name}'${args ? ', ' + args : ''})} */
@@ -35,13 +35,13 @@ const call = (name: string, file: string, args: ?string) => {
 
 const called = (name: string, file: string, assert: ?Assert) =>
   () => {
-    const result = call(name, file);
+    const result = call({ name, file });
     return assertions(result, assert);
   };
 
 type SassArg = Number | String | Boolean;
 const calledWithArgs = (name: string, file: string, assert: Assert) =>
   (...args: SassArg[]) => {
-    const result = call(name, file, args.join(','));
+    const result = call({ name, file, args: args.join(',') });
     return assertions(result, assert);
   };
