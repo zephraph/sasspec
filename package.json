@@ -1,0 +1,44 @@
+{
+  "name": "sasspec",
+  "version": "2.0.0",
+  "description": "A unit testing library for sass",
+  "main": "index.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "test": "tape -r babel-register ./**/*.spec.js | faucet",
+    "test:watch": "watch 'npm test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephraph/sasspec.git"
+  },
+  "keywords": [
+    "sass",
+    "unit",
+    "testing"
+  ],
+  "author": "Zephraph <zephraph@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zephraph/sasspec/issues"
+  },
+  "homepage": "https://github.com/zephraph/sasspec#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-node5": "^11.1.0",
+    "eslint": "^3.5.0",
+    "eslint-plugin-flowtype": "^2.19.0",
+    "faucet": "0.0.1",
+    "flow-bin": "^0.32.0",
+    "tape": "^4.6.0",
+    "watch": "^0.19.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "node-sass": "^3.0.0"
+  }
+}

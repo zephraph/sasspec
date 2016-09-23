@@ -1,0 +1,7 @@
+@function noArgs() {
+  @return noArgs;
+}
+
+@function withArgs($args...) {
+  @return $args;
+}
