@@ -1,0 +1,7 @@
+@mixin helloWorld {
+  .hello {
+    world: true;
+  }
+}
+
+@include helloWorld();

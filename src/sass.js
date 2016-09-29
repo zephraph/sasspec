@@ -4,30 +4,33 @@ import sass from 'node-sass';
 import path from 'path';
 
 type SassRenderOpts = {
-  file: string,
+  file: ?string,
   data: string,
   normalize: ?(str: string) => string,
-  sassOpts: any[]
+  sassOpts: Object
 };
 
-export function renderSync(args: SassRenderOpts): string {
+const sassRenderer = (opts: Object): string =>
+  sass
+    .renderSync(opts)
+    .css
+    .toString('utf8');
 
-  let {file, data, normalize, ...sassOpts} = args;
+export function renderSync(args: SassRenderOpts, render: Function = sassRenderer): string {
+
+  let {file, data, normalize, sassOpts} = args;
 
   if (!normalize) {
     normalize = i => i;
   }
 
   const opts = {
-    includePaths: [ path.dirname(file) ],
+    includePaths: file
+      ? [ path.dirname(file) ]
+      : [],
     data,
     ...sassOpts
   };
 
-  return normalize(
-    sass
-      .renderSync(opts)
-      .css
-      .toString('utf8')
-    );
+  return normalize(render(opts));
 }
