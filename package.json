@@ -7,8 +7,10 @@
     "node": ">=5.0.0"
   },
   "scripts": {
+    "build": "babel src --out-dir dist",
     "test": "tape -r babel-register ./**/*.spec.js | faucet",
-    "test:watch": "watch 'npm test'"
+    "test:watch": "watch 'npm test'",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
