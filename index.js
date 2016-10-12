@@ -1,1 +1,1 @@
-export.modules = require('./dist');
+module.exports = require('./dist');
