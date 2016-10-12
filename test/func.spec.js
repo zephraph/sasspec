@@ -35,3 +35,10 @@ test('function should return a list argument', assert => {
     .calledWithArgs('(test, 1, 2)')
     .equal('test, 1, 2');
 });
+
+test('function should return a map argument', assert => {
+  sass(assert)
+    .func('withArgs')
+    .calledWithArgs('(test: this)')
+    .equal('(test: this)');
+});
