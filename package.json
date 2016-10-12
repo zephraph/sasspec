@@ -1,6 +1,6 @@
 {
   "name": "sasspec",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "A unit testing library for sass",
   "main": "index.js",
   "engines": {
