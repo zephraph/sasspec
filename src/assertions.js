@@ -1,9 +1,9 @@
 import assert from 'assert';
 
-export default function assertion(result, assert = assert) {
+export default function assertion(result, assertion = assert) {
   return {
-    equal: assert.equal.bind(null, result),
-    notEqual: assert.notEqual.bind(null, result),
-    ok: assert.ok.bind(null, result)
+    equal: assertion.equal.bind(null, result),
+    notEqual: assertion.notEqual.bind(null, result),
+    ok: assertion.ok.bind(null, result)
   };
 }
