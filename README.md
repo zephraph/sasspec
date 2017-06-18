@@ -1,5 +1,7 @@
 # sasspec [![Build Status](https://travis-ci.org/zephraph/sasspec.svg?branch=master)](https://travis-ci.org/zephraph/sasspec)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zephraph/sasspec.svg)](https://greenkeeper.io/)
+
 A framework to test sass mixins and functions
 
 ## API
